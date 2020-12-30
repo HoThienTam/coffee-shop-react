@@ -1,4 +1,4 @@
-import React, { memo } from "react";
+import React from "react";
 import styled from "@emotion/styled";
 
 const Dot = styled.span`
