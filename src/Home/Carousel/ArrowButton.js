@@ -20,9 +20,9 @@ const ArrowButton = ({ direction, handleClick }) => {
   return (
     <ButtonWrapper onClick={handleClick} direction={direction}>
       {direction === "right" ? (
-        <i class="fa fa-chevron-right" data-slide="next" />
+        <i className="fa fa-chevron-right" data-slide="next" />
       ) : (
-        <i class="fa fa-chevron-left" data-slide="prev" />
+        <i className="fa fa-chevron-left" data-slide="prev" />
       )}
     </ButtonWrapper>
   );
