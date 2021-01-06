@@ -1,14 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
 import ArrowButton from "./ArrowButton";
+import Dots from "./Dots";
 import { Slider, SliderContent, Slide } from "./styles";
 
 const Carousel = (props) => {
-  const { slides } = props;
+  const { slides, autoPlay } = props;
 
   const firstSlide = slides[0];
   const secondSlide = slides[1];
   const lastSlide = slides[slides.length - 1];
 
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [activeSlide, setActiveSlide] = useState(0);
   const [translate, setTranslate] = useState(window.innerWidth);
   const [transition, setTransition] = useState(0.6);
@@ -20,26 +22,45 @@ const Carousel = (props) => {
 
   const sliderRef = useRef();
   const transitionRef = useRef();
+  const autoPlayRef = useRef();
 
   useEffect(() => {
     transitionRef.current = smoothTransition;
+    autoPlayRef.current = nextSlide;
   });
 
   useEffect(() => {
     const slider = sliderRef.current;
 
-    const smooth = (e) => {
+    const autoPlayHandler = () => {
+      autoPlayRef.current();
+    };
+
+    const transitionEndHandler = (e) => {
       if (e.target.className.includes("SliderContent")) {
         transitionRef.current();
       }
     };
 
-    const transitionEnd = slider.addEventListener("transitionend", smooth);
+    const transitionEnd = slider.addEventListener(
+      "transitionend",
+      transitionEndHandler
+    );
+
+    let interval = null;
+
+    if (autoPlay) {
+      interval = setInterval(autoPlayHandler, autoPlay * 1000);
+    }
 
     return () => {
       slider.removeEventListener("transitionend", transitionEnd);
+
+      if (autoPlay) {
+        clearInterval(interval);
+      }
     };
-  }, []);
+  }, [autoPlay]);
 
   const smoothTransition = () => {
     let _slides = [];
@@ -51,6 +72,7 @@ const Carousel = (props) => {
 
     setSlideArr(_slides);
     setTranslate(window.innerWidth);
+    setIsTransitioning(false);
     setTransition(0);
   };
 
@@ -59,14 +81,18 @@ const Carousel = (props) => {
   }, [transition]);
 
   const nextSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setTranslate(translate + window.innerWidth);
     setActiveSlide(activeSlide === slides.length - 1 ? 0 : activeSlide + 1);
   };
 
-  const prevSlide = () =>{
+  const prevSlide = () => {
+    if (isTransitioning) return;
+    setIsTransitioning(true);
     setTranslate(0);
     setActiveSlide(activeSlide === 0 ? slides.length - 1 : activeSlide - 1);
-  }
+  };
 
   return (
     <Slider ref={sliderRef}>
@@ -82,6 +108,8 @@ const Carousel = (props) => {
       </SliderContent>
       <ArrowButton direction="left" handleClick={prevSlide} />
       <ArrowButton direction="right" handleClick={nextSlide} />
+
+      <Dots slides={slides} activeSlide={activeSlide} />
     </Slider>
   );
 };

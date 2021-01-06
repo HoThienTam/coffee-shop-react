@@ -12,10 +12,12 @@ const slides = [
 
 const Home = (props) => {
   return (
-    <Container>
-      <Header />
-      <Carousel slides={slides} />
-    </Container>
+    <>
+      <Container>
+        <Header />
+      </Container>
+      <Carousel slides={slides} autoPlay={5} />
+    </>
   );
 };
 

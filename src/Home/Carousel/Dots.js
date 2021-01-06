@@ -1,21 +1,24 @@
-import React from "react";
+import React, { memo } from "react";
 import styled from "@emotion/styled";
 
 const Dot = styled.span`
-  padding: 10px;
-  margin-right: 5px;
+  transition: all ease 0.3s;
+  width: ${(props) => (props.active ? "25px" : "8px")};
+  height: 8px;
+  background: #f7f7ff;
+  margin: 0 10px;
+  border-radius: 30px;
   cursor: pointer;
-  border-radius: 50%;
-  background: ${(active) => (active ? "black" : "white")};
 `;
 
 const DotWrapper = styled.div`
   position: absolute;
   bottom: 25px;
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  transform: translateX(-50%);
+  left: 50%;
 `;
 
 const Dots = ({ slides, activeSlide }) => {
@@ -28,4 +31,4 @@ const Dots = ({ slides, activeSlide }) => {
   );
 };
 
-export default Dots;
+export default memo(Dots);
