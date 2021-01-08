@@ -1,7 +1,6 @@
 import React from "react";
-import { Container } from "react-bootstrap";
 import Header from "./Header";
-import Carousel from "./Carousel";
+import Carousel from "../../Components/Carousel";
 
 const slides = [
   "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
@@ -13,9 +12,7 @@ const slides = [
 const Home = (props) => {
   return (
     <>
-      <Container>
-        <Header />
-      </Container>
+      <Header />
       <Carousel slides={slides} autoPlay={5} />
     </>
   );
