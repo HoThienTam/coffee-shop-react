@@ -4,6 +4,7 @@ import NavBar from "../../../Components/NavBar";
 import { HeaderInner } from "./styles";
 
 const Header = (props) => {
+
   return (
     <HeaderInner>
       <Container>

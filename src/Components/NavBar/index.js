@@ -8,7 +8,7 @@ const NavigationBar = () => {
         <span>Landing</span> Page
       </Logo>
       <NavMenu>
-        <NavItem>Home</NavItem>
+        <NavItem active>Home</NavItem>
         <NavItem>Feature</NavItem>
         <NavItem>About me</NavItem>
         <NavItem>Pages</NavItem>

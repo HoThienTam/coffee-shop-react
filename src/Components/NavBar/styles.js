@@ -28,8 +28,14 @@ export const NavMenu = styled.ul`
 `;
 
 export const NavItem = styled.li`
-  color: #fff;
+  color: ${(props) => (props.active ? "#00c9a7;" : "#fff;")}
   padding: 25px 15px;
   font-weight: 400;
   letter-spacing: 1px;
+  
+  :hover {
+    color: #00c9a7;
+    transition: all ease 0.3s;
+    cursor: pointer;
+  }
 `;

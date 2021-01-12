@@ -14,6 +14,7 @@ const Home = (props) => {
     <>
       <Header />
       <Carousel slides={slides} autoPlay={5} />
+      <Carousel slides={slides} autoPlay={5} />
     </>
   );
 };
