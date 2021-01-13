@@ -11,29 +11,23 @@ export const Logo = styled.a`
   color: #fff;
   font-weight: 600;
   letter-spacing: 0.5px;
+  color: ${(props) => (props.inverse ? "hotpink" : "#fff")};
 
   > span {
-    color: hotpink;
+    color: ${(props) => (props.inverse ? "black" : "hotpink")};
   }
   :hover {
     text-decoration: none;
-    color: #fff;
+    color: ${(props) => (props.inverse ? "hotpink" : "#fff")};
   }
 `;
 
-export const NavMenu = styled.ul`
-  list-style: none;
-  display: flex;
-  margin: 0;
-`;
-
 export const StyledLink = styled.a`
-  color: ${(props) => (props.active ? "#00c9a7;" : "#fff;")}
   padding: 15px;
   font-weight: 400;
   letter-spacing: 1px;
   display: block;
-  
+
   :hover {
     color: #00c9a7;
     transition: all ease 0.3s;
@@ -41,3 +35,14 @@ export const StyledLink = styled.a`
     text-decoration: none;
   }
 `;
+
+export const NavMenu = styled.ul`
+  list-style: none;
+  display: flex;
+  margin: 0;
+
+  a {
+    color: ${(props) => (props.inverse ? "black" : "#ffffff")};
+  }
+`;
+

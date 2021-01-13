@@ -14,9 +14,6 @@ export const HeaderInner = styled.div`
     `background: #fff;
     box-shadow: 0 1px 10px rgba(22, 28, 45, 0.15);
     top: 0;
-    padding: 0;
-    
-    a {
-      color: #000;
-    }`}
+    padding: 0;  
+    `}
 `;

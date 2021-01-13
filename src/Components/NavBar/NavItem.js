@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledLink } from "./styles";
-const NavItem = ({ active, href, children }) => {
+const NavItem = ({href, children }) => {
   return (
     <li>
-      <StyledLink href={href} active={active}>{children}</StyledLink>
+      <StyledLink href={href}>{children}</StyledLink>
     </li>
   );
 };

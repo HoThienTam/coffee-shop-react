@@ -21,7 +21,7 @@ const Header = (props) => {
   return (
     <HeaderInner scroll={scrollPos}>
       <Container>
-        <NavBar></NavBar>
+        <NavBar inverse={scrollPos > 0}/>
       </Container>
     </HeaderInner>
   );
