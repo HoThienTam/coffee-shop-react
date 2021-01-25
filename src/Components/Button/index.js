@@ -7,10 +7,14 @@ const ButtonWrapper = styled.a`
   border: 2px solid #ea8025;
   padding: 6px 15px;
   font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  ${props => props.right && `margin-left: 25px;`}
 `;
 
 const Button = (props) => {
-  return <ButtonWrapper>{props.children}</ButtonWrapper>;
+  return <ButtonWrapper right={props.right}>{props.children}</ButtonWrapper>;
 };
 
 export default Button;

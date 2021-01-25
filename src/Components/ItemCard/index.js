@@ -12,10 +12,8 @@ const ItemCard = () => {
       />
       <h3>TRÀ OOLONG BƯỞI MẬT ONG</h3>
       <Price>50,000 đ</Price>
-      <div>
-        <Button>Mua ngay</Button>
-        <Button>Tìm hiểu thêm</Button>
-      </div>
+      <Button>MUA NGAY</Button>
+      <Button right>TÌM HIỂU THÊM</Button>
     </ContentWrapper>
   );
 };
