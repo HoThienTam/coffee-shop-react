@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./Header";
 import Carousel from "../../Components/Carousel";
+import ItemCard from "../../Components/ItemCard";
 
 const slides = [
   "https://images.unsplash.com/photo-1449034446853-66c86144b0ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2100&q=80",
@@ -14,7 +15,8 @@ const Home = (props) => {
     <>
       <Header />
       <Carousel slides={slides} autoPlay={5} />
-      <Carousel slides={slides} autoPlay={5} />
+      <ItemCard />
+      <ItemCard />
     </>
   );
 };

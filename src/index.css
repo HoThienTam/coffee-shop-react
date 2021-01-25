@@ -5,3 +5,8 @@
   overflow-x: hidden;
   color: #8492a6;
 }
+
+a, a:hover {
+  text-decoration: none;
+  color: black;
+}
