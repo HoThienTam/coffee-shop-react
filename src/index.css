@@ -10,3 +10,51 @@ a, a:hover {
   text-decoration: none;
   color: black;
 }
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 100;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Thin.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 300;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Light.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 400;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Regular.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display';
+    font-weight: 500;
+    src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Medium.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 600;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-SemiBold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 700;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Bold.ttf) format('truetype');
+}
+
+@font-face {
+  font-family: 'Big Shoulders Display';
+  font-weight: 800;
+  src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-ExtraBold.ttf) format('truetype');
+}
+
+@font-face {
+    font-family: 'Big Shoulders Display';
+    font-weight: 900;
+    src: local('BigShouldersDisplay'), url(./assets//fonts/BigShouldersDisplay-Black.ttf) format('truetype');
+}
