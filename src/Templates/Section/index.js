@@ -45,7 +45,7 @@ const Section = ({ children, title, inverse, btn }) => {
       <Container>
         <SectionHeader>
           <Title>{title.toUpperCase()}</Title>
-          {btn && <Button bgColor={colors.black}>{btn.toUpperCase()}</Button>}
+          {btn && <Button color={colors.black}>{btn.toUpperCase()}</Button>}
         </SectionHeader>
         <SectionContent>{children}</SectionContent>
       </Container>

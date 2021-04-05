@@ -1,6 +1,8 @@
 import React from "react";
+import colors from "../../constants/colors";
 import Button from "../Button";
 import { ContentWrapper, Price } from "./styles";
+
 const ItemCard = () => {
   return (
     <ContentWrapper href="https://www.thecoffeehouse.com/products/tra-buoi-mat-ong">
@@ -12,8 +14,8 @@ const ItemCard = () => {
       />
       <h3>TRÀ OOLONG BƯỞI MẬT ONG</h3>
       <Price>50,000 đ</Price>
-      <Button>MUA NGAY</Button>
-      <Button right>TÌM HIỂU THÊM</Button>
+      <Button color={colors.orange}>MUA NGAY</Button>
+      <Button right color={colors.orange}>TÌM HIỂU THÊM</Button>
     </ContentWrapper>
   );
 };
